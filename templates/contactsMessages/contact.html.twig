@@ -1,0 +1,35 @@
+{# templates/contactMessages/contact.html.twig #}
+
+{% form_theme form 'bootstrap_5_horizontal_layout.html.twig' %}
+
+{{ form_start(form) }}
+
+<h1>Kapcsolat</h1>
+{{ form_end(form) }}
+{% for message in app.flashes('notice') %}
+    <div style="margin:0  auto; width: 100%; position: fixed; top: 0; display: flex; justify-content: center">
+        <div>
+            <h3> {{ message }} </h3>
+        </div>
+    </div>
+{% endfor %}
+
+
+<style>
+
+    body {
+        height:100%;
+        width:100%;
+        margin: 0;
+        background-color: orange;
+        display: flex;
+    }
+    form {
+        margin: auto;
+        background-color: white;
+        padding: 10%;
+        border-radius: 10px;
+    }
+
+</style>
+
